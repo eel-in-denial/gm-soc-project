@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bfqrv1t7h5yra"]
+
+[ext_resource type="Script" uid="uid://cfl5hgs6tojhp" path="res://scene_loader/tests/test_loading_scene_main_menu.gd" id="1_ketag"]
+
+[node name="TestLoadingScene" type="Node2D" unique_id=263318075]
+script = ExtResource("1_ketag")
+next_scene = &"res://scene_loader/tests/test_loading_scene_level_1.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1222738815]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1673883307]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -15.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
