@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bdn4hlh6nw5qv"]
+
+[ext_resource type="Script" uid="uid://bmm8lvcjc2n2u" path="res://green_tile.gd" id="1_n0eke"]
+[ext_resource type="Texture2D" uid="uid://7058nt7xil3i" path="res://projectile 32x32.png" id="1_wwxbt"]
+
+[node name="GreenTile" type="Node2D" unique_id=2134964928]
+script = ExtResource("1_n0eke")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81943726]
+texture = ExtResource("1_wwxbt")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
