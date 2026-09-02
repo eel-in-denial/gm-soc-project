@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cymdl2sg2tqt3"
-path="res://.godot/imported/smoker.png-737b0c151ab73b0065977e7766f1663c.ctex"
+path="res://.godot/imported/smoker.png-0d439ae2989694deb56c4b5a51a52b6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://smoker.png"
-dest_files=["res://.godot/imported/smoker.png-737b0c151ab73b0065977e7766f1663c.ctex"]
+source_file="res://player/smoker.png"
+dest_files=["res://.godot/imported/smoker.png-0d439ae2989694deb56c4b5a51a52b6e.ctex"]
 
 [params]
 
