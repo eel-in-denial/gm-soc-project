@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bry2fyq03m3f5"]
+
+[ext_resource type="Script" uid="uid://dj04rpa3rboxm" path="res://level_parts/tilemaps/game_entities.gd" id="1_yj5je"]
+[ext_resource type="PackedScene" uid="uid://v18q56k7gd8g" path="res://game_assets/animals/moo.tscn" id="4_3hrov"]
+[ext_resource type="Texture2D" uid="uid://cyuus8k7hiim6" path="res://level_parts/tilemaps/entities.png" id="4_fi2ix"]
+[ext_resource type="PackedScene" uid="uid://g85iglst35h1" path="res://game_assets/crates/crate.tscn" id="5_3hrov"]
+[ext_resource type="PackedScene" uid="uid://0xdu8eirgoku" path="res://game_assets/player/player.tscn" id="5_uejrs"]
+[ext_resource type="PackedScene" uid="uid://dw2jsdiroi8dg" path="res://game_assets/crates/short_crate.tscn" id="6_3twwi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhvnb"]
+texture = ExtResource("4_fi2ix")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/custom_data_0 = 1
+0:1/0 = 0
+0:1/0/custom_data_0 = 2
+1:1/0 = 0
+1:1/0/custom_data_0 = 3
+
+[sub_resource type="TileSet" id="TileSet_eviq0"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "is_entity"
+custom_data_layer_0/type = 2
+sources/3 = SubResource("TileSetAtlasSource_fhvnb")
+
+[node name="GameEntities" type="TileMapLayer" unique_id=2116111053]
+tile_set = SubResource("TileSet_eviq0")
+script = ExtResource("1_yj5je")
+entity_scenes = Dictionary[int, PackedScene]({
+0: ExtResource("5_uejrs"),
+1: ExtResource("4_3hrov"),
+2: ExtResource("5_3hrov"),
+3: ExtResource("6_3twwi")
+})

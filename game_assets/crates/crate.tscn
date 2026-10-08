@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://g85iglst35h1"]
+
+[ext_resource type="Script" uid="uid://un6ajaqbv47v" path="res://game_assets/crates/crate.gd" id="1_odg22"]
+[ext_resource type="Texture2D" uid="uid://nxdbfutc5465" path="res://game_assets/crates/tall_crate.png" id="2_odg22"]
+[ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://components/grid_movement_c.tscn" id="3_236nc"]
+
+[node name="Crate" type="Node2D" unique_id=459245225 groups=["projectile"]]
+script = ExtResource("1_odg22")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1111446147]
+texture = ExtResource("2_odg22")
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="GridMovement_C" parent="." unique_id=329636349 node_paths=PackedStringArray("object") instance=ExtResource("3_236nc")]
+effects_enabled = false
+can_jump = false
+object = NodePath("..")
+step_len = 0

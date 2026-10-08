@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://v18q56k7gd8g"]
+
+[ext_resource type="Texture2D" uid="uid://c66o8g3ppk2gg" path="res://game_assets/animals/moo.png" id="1_okewd"]
+[ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://components/grid_movement_c.tscn" id="2_h3rrm"]
+
+[node name="Moo" type="Node2D" unique_id=1981757779]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=726104260]
+texture = ExtResource("1_okewd")
+hframes = 7
+
+[node name="GridMovement_C" parent="." unique_id=329636349 instance=ExtResource("2_h3rrm")]
+can_jump = false
+step_len = 0

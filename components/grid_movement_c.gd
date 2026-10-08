@@ -131,11 +131,13 @@ func _move_to(curr_cell: Vector2i, dest_cell: Vector2i, pre_dist := 0) -> Vector
 	
 	var local_pos = Global.game_objects.map_to_local(dest_cell)
 	if tween_anim:
-		if !tween:
-			tween = create_tween()
-		if !tween.is_valid():
+		if tween:
 			tween.kill()
-			tween = create_tween()
+		tween = create_tween()
+		#if !tween:
+			#tween = create_tween()
+		#if !tween.is_valid():
+			#
 		tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
 		if pre_dist:
 			tween.tween_interval(pre_dist * tween_time)

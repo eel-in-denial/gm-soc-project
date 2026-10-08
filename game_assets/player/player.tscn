@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://0xdu8eirgoku"]
+
+[ext_resource type="Script" uid="uid://coln84fdlp385" path="res://game_assets/player/player.gd" id="1_6cir2"]
+[ext_resource type="PackedScene" uid="uid://iyiapdkynyxx" path="res://game_assets/player/inventory/inventory.tscn" id="2_6cir2"]
+[ext_resource type="Texture2D" uid="uid://bho2o00gv2ry4" path="res://game_assets/player/player.png" id="3_gtan3"]
+[ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://components/grid_movement_c.tscn" id="4_j24e6"]
+[ext_resource type="Script" uid="uid://dp8ioshac5v3b" path="res://game_assets/player/inventory/inventory.gd" id="5_hh3fn"]
+
+[node name="Player" type="Node2D" unique_id=267222947]
+z_index = 1
+script = ExtResource("1_6cir2")
+
+[node name="InventoryDisplay" parent="." unique_id=638286422 instance=ExtResource("2_6cir2")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1261806961]
+position = Vector2(0, -12)
+texture = ExtResource("3_gtan3")
+region_rect = Rect2(32, 160, 32, 32)
+
+[node name="GridMovement_C" parent="." unique_id=329636349 node_paths=PackedStringArray("object") instance=ExtResource("4_j24e6")]
+object = NodePath("..")
+
+[node name="Inventory" type="Node2D" parent="." unique_id=1087209975 node_paths=PackedStringArray("movement")]
+script = ExtResource("5_hh3fn")
+movement = NodePath("../GridMovement_C")
+
+[node name="AutoMove" type="Timer" parent="." unique_id=660976860]
+wait_time = 0.4
+one_shot = true
+
+[node name="BufferClear" type="Timer" parent="." unique_id=603196414]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="BufferClear" to="." method="_on_buffer_clear_timeout"]
