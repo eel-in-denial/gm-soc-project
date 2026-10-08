@@ -7,7 +7,3 @@ signal player_outside_screen(direction: Vector2i)
 
 var game_objects: GameObjects = null
 var game_entities: GameEntities = null
-<<<<<<< Updated upstream
-=======
-	
->>>>>>> Stashed changes
