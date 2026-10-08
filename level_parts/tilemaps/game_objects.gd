@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func break_potion(cell: Vector2i, p: Potion.Type):
-	set_cell(cell, 3, Potion.data[p]["effect_atlas_coords"])
+	set_cell(cell, 0, Potion.data[p]["effect_atlas_coords"])
 	print(cell, Potion.data[p]["effect_atlas_coords"])
 
 func collect_potion(cell: Vector2i):
@@ -28,7 +28,7 @@ func find_tile(atlas: TileSetAtlasSource, is_object: int, potion_type: int) -> V
 	return Vector2i(-1, -1)
 	
 func update_button_group(button_group: int, active: bool) -> void:
-	var tiles = get_used_cells_by_id(4);
+	var tiles = get_used_cells_by_id(1);
 	for coords in tiles:
 		var tile := get_cell_tile_data(coords);
 		
@@ -38,6 +38,6 @@ func update_button_group(button_group: int, active: bool) -> void:
 			var sprite_offset_y: int = floor((tile.get_custom_data("button_group") - 1) / 2) * 2;
 			
 			if (active):
-				set_cell(coords, 4, Vector2i(1 + sprite_offset_x, 1 + sprite_offset_y));
+				set_cell(coords, 1, Vector2i(1 + sprite_offset_x, 1 + sprite_offset_y));
 			else:
-				set_cell(coords, 4, Vector2i(0 + sprite_offset_x, 1 + sprite_offset_y));
+				set_cell(coords, 1, Vector2i(0 + sprite_offset_x, 1 + sprite_offset_y));

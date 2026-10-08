@@ -6,13 +6,22 @@
 texture = ExtResource("5_8xpcs")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
 2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
 0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
 1:1/0 = 0
 2:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_i5q85"]
 tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/4 = SubResource("TileSetAtlasSource_04sra")
 
 [node name="Background" type="TileMapLayer" unique_id=2109231554]
