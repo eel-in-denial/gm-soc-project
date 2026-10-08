@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0xdu8eirgoku"]
 
 [ext_resource type="Script" uid="uid://coln84fdlp385" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://iyiapdkynyxx" path="res://game_scenes/inventory.tscn" id="2_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://bho2o00gv2ry4" path="res://player/player.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://components/grid_movement_c.tscn" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://dp8ioshac5v3b" path="res://player/inventory.gd" id="4_yw30f"]
@@ -8,6 +9,8 @@
 [node name="Player" type="Node2D" unique_id=267222947]
 z_index = 1
 script = ExtResource("1_rkbax")
+
+[node name="InventoryDisplay" parent="." unique_id=1556602879 instance=ExtResource("2_qjkh3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1261806961]
 position = Vector2(0, -12)

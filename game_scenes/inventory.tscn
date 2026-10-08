@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://iyiapdkynyxx"]
+
+[ext_resource type="Script" uid="uid://n74dqpub5jst" path="res://inventory/inventory_display.gd" id="1_3k2a8"]
+[ext_resource type="PackedScene" uid="uid://dqjgehwx3o1jf" path="res://game_scenes/inventory_slot.tscn" id="1_yov1c"]
+
+[node name="Node" type="Node" unique_id=638286422]
+
+[node name="Inventory" type="Node2D" parent="." unique_id=1556602879 node_paths=PackedStringArray("slots")]
+z_index = 2
+script = ExtResource("1_3k2a8")
+slots = [NodePath("InventorySlot"), NodePath("InventorySlot2"), NodePath("InventorySlot3")]
+
+[node name="InventorySlot" parent="Inventory" unique_id=1366263987 instance=ExtResource("1_yov1c")]
+
+[node name="InventorySlot2" parent="Inventory" unique_id=954175701 instance=ExtResource("1_yov1c")]
+position = Vector2(32, 0)
+
+[node name="InventorySlot3" parent="Inventory" unique_id=64192419 instance=ExtResource("1_yov1c")]
+position = Vector2(64, 0)

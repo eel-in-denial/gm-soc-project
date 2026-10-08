@@ -17,9 +17,11 @@ var step_len := 1
 # Timer that clears buffered inputs after 0.1 seconds of inactivity
 @onready var buffer_timer: Timer = $BufferClear;
 var buffered_input: Array[Vector2i] = [];
+@onready var inventory_display: InventoryDisplay = $InventoryDisplay/Inventory
 
 func _ready() -> void:
 	movement.cell_pos = Global.game_objects.local_to_map(position)
+	inventory_display.setup(inventory)
 
 func _input(event: InputEvent) -> void:
 	_receive_direction(event)
@@ -53,10 +55,15 @@ func _physics_process(delta: float) -> void:
 		_receive_auto_direction()
 
 func _process(delta: float) -> void:
-	#move_cooldown -= delta;
-	
 	$Sprite2D.scale = $Sprite2D.scale.lerp(Vector2(1,1), 0.26);
+<<<<<<< Updated upstream
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+
+>>>>>>> main
 func _receive_direction(event: InputEvent) -> void:
 	for direction in GridMovement_C.DIRECTIONS:
 		if event.is_action_pressed(direction):
@@ -70,10 +77,13 @@ func _receive_auto_direction() -> void:
 			buffered_input.append(GridMovement_C.DIRECTIONS[direction]);
 			
 			buffer_timer.start();
+<<<<<<< Updated upstream
 
 func _receive_throw(event: InputEvent) -> void:
 	if event.is_action_pressed("throw"):
 		inventory.throw()
+=======
+>>>>>>> Stashed changes
 	
 func get_player_position() -> Vector2:
 	return position
