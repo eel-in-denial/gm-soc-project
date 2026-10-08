@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bioj7ta3md66s" path="res://level_parts/tilemaps/background.tscn" id="1_ibap5"]
 [ext_resource type="PackedScene" uid="uid://dxo1utgj7ec37" path="res://level_parts/tilemaps/game_objects.tscn" id="2_ao6qk"]
-[ext_resource type="Script" uid="uid://dg7xh05ecfbhf" path="res://level_parts/camera_2d.gd" id="4_ao6qk"]
+[ext_resource type="PackedScene" uid="uid://bf3hw3j02ih4g" path="res://level_parts/camera_2d.tscn" id="4_ao6qk"]
+[ext_resource type="PackedScene" uid="uid://chyueqfubyjxh" path="res://level_parts/level_manager.tscn" id="5_42pt4"]
 [ext_resource type="PackedScene" uid="uid://bry2fyq03m3f5" path="res://level_parts/tilemaps/game_entities.tscn" id="6_e5pat"]
-[ext_resource type="Script" uid="uid://8rx8je7wxutm" path="res://level_parts/level_manager.gd" id="7_pcqlf"]
 
 [node name="TestLevel" type="Node2D" unique_id=83481446]
 
@@ -37,11 +37,7 @@ offset_bottom = 23.0
 [node name="GameEntities" parent="." unique_id=2116111053 instance=ExtResource("6_e5pat")]
 tile_map_data = PackedByteArray("AAACAAIAAwABAAAAAAAHAAcAAwAAAAEAAAAKAAQAAwAAAAEAAAALAAQAAwAAAAEAAAAOAAQAAwAAAAEAAAALAAYAAwAAAAEAAAA=")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1537170692]
-anchor_mode = 0
-zoom = Vector2(2, 2)
-script = ExtResource("4_ao6qk")
+[node name="Camera2D" parent="." unique_id=1442535797 instance=ExtResource("4_ao6qk")]
 
-[node name="LevelManager" type="Node" parent="." unique_id=1533057986 node_paths=PackedStringArray("camera")]
-script = ExtResource("7_pcqlf")
+[node name="LevelManager" parent="." unique_id=1163530648 node_paths=PackedStringArray("camera") instance=ExtResource("5_42pt4")]
 camera = NodePath("../Camera2D")

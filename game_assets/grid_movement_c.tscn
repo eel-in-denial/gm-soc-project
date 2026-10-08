@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfnn1ansuqnmu"]
+
+[ext_resource type="Script" uid="uid://bsac8i2fwxrbm" path="res://game_assets/grid_movement_c.gd" id="1_rjcog"]
+
+[node name="GridMovement_C" type="Node" unique_id=329636349]
+script = ExtResource("1_rjcog")

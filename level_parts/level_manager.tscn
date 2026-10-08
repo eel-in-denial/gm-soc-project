@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://chyueqfubyjxh"]
+
+[ext_resource type="Script" uid="uid://8rx8je7wxutm" path="res://level_parts/level_manager.gd" id="1_b363x"]
+
+[node name="LevelManager" type="Node" unique_id=1163530648 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_b363x")
+camera = NodePath("")

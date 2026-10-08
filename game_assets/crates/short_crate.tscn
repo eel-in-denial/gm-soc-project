@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dw2jsdiroi8dg"]
 
-[ext_resource type="Texture2D" uid="uid://bfkd2uqpgmrmf" path="res://game_assets/crates/short_crate.png" id="1_cx0n5"]
-[ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://components/grid_movement_c.tscn" id="2_bgvxi"]
+[ext_resource type="Texture2D" uid="uid://bfkd2uqpgmrmf" path="res://game_assets/crates/short_crate.png" id="1_fr4x8"]
+[ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://game_assets/grid_movement_c.tscn" id="2_83q3m"]
 
 [node name="ShortCrate" type="Node2D" unique_id=2145667390]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=153350820]
-texture = ExtResource("1_cx0n5")
+texture = ExtResource("1_fr4x8")
 
-[node name="GridMovement_C" parent="." unique_id=329636349 node_paths=PackedStringArray("object") instance=ExtResource("2_bgvxi")]
+[node name="GridMovement_C" parent="." unique_id=329636349 node_paths=PackedStringArray("object") instance=ExtResource("2_83q3m")]
 effects_enabled = false
 can_jump = false
 object = NodePath("..")

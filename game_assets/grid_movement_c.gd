@@ -78,6 +78,7 @@ func _path_logic(path_pos: Vector2i, dir: Vector2i, is_grounded: bool, pre_dist:
 	if path_pos in Global.game_entities.entity_dict:
 		var entity = Global.game_entities.entity_dict[path_pos]
 		#var total_push = push_strength + 
+		temp_push_strength -= pre_dist
 		var pushed_pos: Vector2i = entity.get_node("GridMovement_C").move(dir, temp_push_strength, pre_dist)
 		if pushed_pos == path_pos:
 			return false
