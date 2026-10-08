@@ -1,46 +1,5 @@
 [gd_scene format=3 uid="uid://b35lfx36wjw8q"]
 
-[ext_resource type="Script" uid="uid://djutuvrnrp41x" path="res://game_scenes/main.gd" id="1_eviq0"]
-
-[node name="Main" type="Node" unique_id=685171487]
-script = ExtResource("1_eviq0")
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
-texture = ExtResource("1_eu44l")
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0an3"]
-texture = ExtResource("2_fp78d")
-texture_region_size = Vector2i(32, 32)
-2:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
-texture = ExtResource("3_eu44l")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t870e"]
-texture = ExtResource("4_82xgy")
-texture_region_size = Vector2i(32, 32)
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ad0uy"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_wijl4")
-sources/1 = SubResource("TileSetAtlasSource_e0an3")
-sources/2 = SubResource("TileSetAtlasSource_7mycd")
-sources/3 = SubResource("TileSetAtlasSource_t870e")
 
 [node name="Main" type="Node2D" unique_id=14544949]
 [gd_scene format=4 uid="uid://b35lfx36wjw8q"]

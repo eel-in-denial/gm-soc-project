@@ -1,6 +1,6 @@
 extends TileMapLayer
 class_name GameObjects
-enum Type {IS_WALL, IS_OBSTACLE, IS_POTION, IS_EFFECT, IS_MOVEABLE, IS_BUTTON}
+enum Type {IS_WALL, IS_OBSTACLE, IS_POTION, IS_EFFECT, IS_MOVEABLE, IS_BUTTON, IS_CHECKPOINT}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

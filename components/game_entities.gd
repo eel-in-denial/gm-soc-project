@@ -2,7 +2,7 @@ extends TileMapLayer
 class_name  GameEntities
 
 @export var entity_scenes: Dictionary[int, PackedScene]
-
+@export var camera: Node2D
 var entity_dict: Dictionary[Vector2i, Node] = {}
 # Called when the node enters the scene tree for the first time.
 # game_entities.gd
@@ -14,6 +14,7 @@ func _exit_tree() -> void:
 		Global.game_entities = null
 
 func _ready() -> void:
+	print(camera)
 	for cell in get_used_cells():
 		var id: int = get_cell_tile_data(cell).get_custom_data("is_entity")
 		var new_node := entity_scenes[id].instantiate() as Node2D
@@ -24,6 +25,11 @@ func _ready() -> void:
 		var movement = new_node.get_node("GridMovement_C") as GridMovement_C
 		movement.cell_pos = cell
 		movement.teleport(cell)
+		if (id == 0) and (Global.last_player_cp != Vector2i.ZERO or !get_viewport_rect().has_point(get_canvas_transform() * new_node.position)):
+			if Global.last_player_cp != Vector2i.ZERO:
+				movement.teleport(Global.last_player_cp)
+			camera.find_player(new_node as Player)
+		movement.init_pos = cell
 	clear()
 
 func move_cell(prev_cell: Vector2i, new_cell: Vector2i):

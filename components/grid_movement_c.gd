@@ -15,6 +15,9 @@ var temp_push_strength := 0
 @export var facing := Vector2i.RIGHT
 @export var tween_time := 0.07
 @export var scale_tween := true
+var init_pos: Vector2i
+
+signal step_len_changed()
 
 # anim variables
 var tween: Tween
@@ -32,6 +35,7 @@ func _process(delta: float) -> void:
 	
 func set_step_length(n: int):
 	step_len = n
+	step_len_changed.emit()
 
 # returns its destiation
 func move(dir: Vector2i, speed := 0, pre_dist := 0) -> Vector2i:
@@ -107,6 +111,8 @@ func _path_logic(path_pos: Vector2i, dir: Vector2i, is_grounded: bool, pre_dist:
 			GameObjects.Type.IS_BUTTON:
 				var button_group: int = tile_data.get_custom_data("button_group");
 				Global.game_objects.update_button_group(button_group, true);
+			GameObjects.Type.IS_CHECKPOINT:
+				Global.last_player_cp = path_pos
 			_:
 				pass
 	
@@ -128,9 +134,14 @@ func _move_to(curr_cell: Vector2i, dest_cell: Vector2i, pre_dist := 0) -> Vector
 	var mod_tween_time = tween_time
 	if (scale_tween):
 		mod_tween_time *= distance;
-	
+
+	#Fix bug where player can move on top of projectile by spamming fast enough
+	if not get_parent() is Player:
+		mod_tween_time -= 0.02
 	var local_pos = Global.game_objects.map_to_local(dest_cell)
 	if tween_anim:
+		if tween:
+			tween.kill()
 		if !tween:
 			tween = create_tween()
 		if !tween.is_valid():
@@ -147,6 +158,16 @@ func _move_to(curr_cell: Vector2i, dest_cell: Vector2i, pre_dist := 0) -> Vector
 	
 
 func teleport(coords: Vector2i):
+	
+	# handle when buttons stop being pressed.
+	var prev_pos: Vector2i = cell_pos;
+	var prev_tile_data := Global.game_objects.get_cell_tile_data(prev_pos);
+	if (prev_tile_data):
+		var prev_tile_type: GameObjects.Type = prev_tile_data.get_custom_data("is_object");
+		
+		if (prev_tile_type == GameObjects.Type.IS_BUTTON):
+			var button_group: int = prev_tile_data.get_custom_data("button_group");
+			Global.game_objects.update_button_group(button_group, false);
 	Global.game_entities.move_cell(cell_pos, coords)
 	cell_pos = coords
 	var local_pos = Global.game_objects.map_to_local(coords)

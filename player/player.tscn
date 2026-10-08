@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bho2o00gv2ry4" path="res://player/player.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://components/grid_movement_c.tscn" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://dp8ioshac5v3b" path="res://player/inventory.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://dg23xi0hfwp17" path="res://player/movement_indicator.gd" id="5_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://dbfeorx7kodlf" path="res://player/inven box.png" id="5_qjkh3"]
 
 [node name="Player" type="Node2D" unique_id=267222947]
 z_index = 1
@@ -30,4 +32,25 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[node name="MovementIndicator" type="Node2D" parent="." unique_id=620248503 node_paths=PackedStringArray("player_movement")]
+script = ExtResource("5_g6k8r")
+player_movement = NodePath("../GridMovement_C")
+
+[node name="Sprite2D" type="Sprite2D" parent="MovementIndicator" unique_id=1141420464]
+position = Vector2(32, 0)
+texture = ExtResource("5_qjkh3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="MovementIndicator" unique_id=753078429]
+position = Vector2(-32, 0)
+texture = ExtResource("5_qjkh3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="MovementIndicator" unique_id=379058061]
+position = Vector2(0, 32)
+texture = ExtResource("5_qjkh3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="MovementIndicator" unique_id=1126715248]
+position = Vector2(0, -32)
+texture = ExtResource("5_qjkh3")
+
+[connection signal="step_len_changed" from="GridMovement_C" to="MovementIndicator" method="_on_grid_movement_c_step_len_changed"]
 [connection signal="timeout" from="BufferClear" to="." method="_on_buffer_clear_timeout"]
