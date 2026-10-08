@@ -56,14 +56,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	$Sprite2D.scale = $Sprite2D.scale.lerp(Vector2(1,1), 0.26);
-<<<<<<< Updated upstream
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Stashed changes
-
->>>>>>> main
+	
 func _receive_direction(event: InputEvent) -> void:
 	for direction in GridMovement_C.DIRECTIONS:
 		if event.is_action_pressed(direction):
@@ -77,13 +70,9 @@ func _receive_auto_direction() -> void:
 			buffered_input.append(GridMovement_C.DIRECTIONS[direction]);
 			
 			buffer_timer.start();
-<<<<<<< Updated upstream
-
 func _receive_throw(event: InputEvent) -> void:
 	if event.is_action_pressed("throw"):
 		inventory.throw()
-=======
->>>>>>> Stashed changes
 	
 func get_player_position() -> Vector2:
 	return position

@@ -18,8 +18,8 @@ texture = ExtResource("2_rkbax")
 region_rect = Rect2(32, 160, 32, 32)
 
 [node name="GridMovement_C" parent="." unique_id=329636349 node_paths=PackedStringArray("object") instance=ExtResource("3_g1dw6")]
-object = NodePath("..")
 scale_tween = false
+object = NodePath("..")
 
 [node name="Inventory" type="Node2D" parent="." unique_id=1087209975 node_paths=PackedStringArray("movement")]
 script = ExtResource("4_yw30f")
