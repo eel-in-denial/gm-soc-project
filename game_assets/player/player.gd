@@ -10,6 +10,7 @@ var step_len := 1
 
 @onready var movement := $GridMovement_C
 @onready var inventory: Inventory = $Inventory
+@onready var sprite := $Sprite2D
 
 # Timer that handles held movement inputs
 @onready var automove_timer: Timer = $AutoMove;
@@ -41,14 +42,19 @@ func _physics_process(delta: float) -> void:
 			if not screen_rect.has_point(get_canvas_transform() * player_pos):
 				Global.player_outside_screen.emit(movement.facing)
 			
-			if (abs(input.x) > 0):
-				$"Sprite2D".flip_h = (input.x < 0);
-				
-				$"Sprite2D".scale.x = 1.2;
-				$"Sprite2D".scale.y = 0.8;
-			else:
-				$"Sprite2D".scale.y = 1.2;
-				$"Sprite2D".scale.x = 0.8;
+			match input:
+				Vector2i.UP:
+					sprite.frame = 2
+				Vector2i.DOWN:
+					sprite.frame = 1
+				Vector2i.RIGHT:
+					sprite.frame = 0
+					sprite.flip_h = false
+				Vector2i.LEFT:
+					sprite.frame = 0
+					sprite.flip_h = true
+			$"Sprite2D".scale.y = 1.2;
+			$"Sprite2D".scale.x = 0.8;
 
 			buffered_input.pop_front();
 		

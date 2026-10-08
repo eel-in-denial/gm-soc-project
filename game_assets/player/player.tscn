@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://coln84fdlp385" path="res://game_assets/player/player.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://iyiapdkynyxx" path="res://game_assets/player/inventory/inventory.tscn" id="2_6cir2"]
-[ext_resource type="Texture2D" uid="uid://bho2o00gv2ry4" path="res://game_assets/player/player.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://c07m80rq2720e" path="res://game_assets/player/player.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bfnn1ansuqnmu" path="res://game_assets/grid_movement_c.tscn" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://dp8ioshac5v3b" path="res://game_assets/player/inventory/inventory.gd" id="4_yw30f"]
 
@@ -13,8 +13,9 @@ script = ExtResource("1_rkbax")
 [node name="InventoryDisplay" parent="." unique_id=638286422 instance=ExtResource("2_6cir2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1261806961]
-position = Vector2(0, -12)
 texture = ExtResource("2_rkbax")
+hframes = 3
+frame = 2
 region_rect = Rect2(32, 160, 32, 32)
 
 [node name="Inventory" type="Node2D" parent="." unique_id=1087209975]
